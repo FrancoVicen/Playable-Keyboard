@@ -45,7 +45,7 @@ const WriterTitle = () => {
 
   return (
     <div>
-      <h1 class="typing" id="typing"></h1>
+      <h1 className="typing" id="typing"></h1>
     </div>
   );
 }

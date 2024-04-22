@@ -1,8 +1,32 @@
-import React, { useState, useEffect } from "react";
+import React, { useRef, useState, useEffect } from 'react';
+import useKeyboardSound from '../customHooks/use-keyboard-sound';
+import useMouseSound from '../customHooks/use-mouse-sound';
 
-export function KeyboardKeyWhite({ children, index, onClick, keyToPress, soundFile, previousSiblingClass, volume }) {
-  const [isPressed, setIsPressed] = useState(false);
-  const [audio, setAudio] = useState(null);
+const KeyboardKeyWhite = ({ keyCode, soundFile, children, index, volume = 1, setKeyVolume }) => {
+  const audioRef = useRef(null);
+  useKeyboardSound(keyCode, soundFile);
+  const mouseSoundRef = useMouseSound(soundFile);
+  const [isPlaying, setIsPlaying] = useState(false);
+
+  useEffect(() => {
+    if (audioRef.current) {
+      audioRef.current.volume = volume / 100;
+    }
+  }, [volume]);
+
+  const handleMouseUp = () => {
+    if (audioRef.current && !isPlaying) {
+      audioRef.current.currentTime = 0;
+      audioRef.current.volume = Math.max(0, Math.min(1, volume));
+      audioRef.current.play();
+      setIsPlaying(true);
+    }
+  };
+
+  const handleAudioEnded = () => {
+    setIsPlaying(false);
+  };
+
   let groupClass = '';
 
   switch (index) {
@@ -29,66 +53,15 @@ export function KeyboardKeyWhite({ children, index, onClick, keyToPress, soundFi
       break;
   }
 
-  const handleMouseDown = () => {
-    setIsPressed(true);
-    startSound();
-  };
-
-  const handleMouseUp = () => {
-    setIsPressed(false);
-    stopSound();
-  };
-
-  const handleKeyPress = (event) => {
-    if (event.key.toLowerCase() === keyToPress.toLowerCase()) {
-      setIsPressed(true);
-      startSound();
-    }
-  };
-
-  const handleVolume = (e) => {
-    audio.volume = e.target.value;
-}
-
-  const startSound = () => {
-    const newAudio = new Audio(`./src/sounds/${soundFile}`);
-    newAudio.loop = true;
-    newAudio.volume = volume / 100;
-    newAudio.play();
-    setAudio(newAudio);
-  };
-
-  const stopSound = () => {
-    if (audio) {
-      audio.pause();
-      audio.currentTime = 0;
-      setAudio(null);
-    }
-  };
-
-  useEffect(() => {
-    window.addEventListener("keypress", handleKeyPress);
-    window.addEventListener("keyup", stopSound);
-    window.addEventListener("mouseup", handleMouseUp);
-
-    return () => {
-      window.removeEventListener("keypress", handleKeyPress);
-      window.removeEventListener("keyup", stopSound);
-      window.removeEventListener("mouseup", handleMouseUp);
-      stopSound();
-    };
-  }, [keyToPress, soundFile, volume]);
-
   return (
-      <li
+    <li
       className={`key white ${groupClass}`}
-      onMouseDown={handleMouseDown}
       onMouseUp={handleMouseUp}
     >
       <span>{children}</span>
+      <audio ref={audioRef} src={`./src/sounds/${soundFile}`} onEnded={handleAudioEnded} />
     </li>
-    
   );
-}
+};
 
 export default KeyboardKeyWhite;

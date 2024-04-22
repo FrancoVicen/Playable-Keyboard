@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from 'react';
 
 const BaseButton = () => {
-  const [audio] = useState(new Audio('./src/sounds/ambient-piano.mp3'));
+  const [audio] = useState(new Audio('./src/sounds/base.mp3'));
   const [isPlaying, setIsPlaying] = useState(false);
 
   const toggleAudio = () => {
     if (isPlaying) {
       audio.pause();
-      audio.currentTime = 0; // Reinicia la posición del audio para evitar que se reanude desde donde se pausó
+      audio.currentTime = 0;
     } else {
       audio.loop = true;
       audio.play();

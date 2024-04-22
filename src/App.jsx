@@ -3,23 +3,16 @@ import KeyboardKeyWhite from './components/keyboard-key-white'
 import KeyboardKeyBlack from './components/keyboard-key-black'
 import WriterTitle from './components/writer-title'
 import TurnButton from './components/turn-button'
-import VolumeControl from './components/volume-control'//eliminar si no sirve
 import BaseButton from './components/base-button'
 import './App.css'
 
 function App() {
-  //const [isOn, setIsOn] = useState(initialIsOn)
   const [volume, setVolume] = useState(50)
-  //const [isMuted, setIsMuted] = useState(false); // Estado inicial del botón de encendido/apagado
 
 
   const handleVolumeChange = (event) => {
     setVolume(event.target.value);
   };
-
-  //const handleVolumeChange = (event) => {
-  //  setVolume(Number(event.target.value)); // Convierte el valor del rango a número y actualiza el estado del volumen
-  //};
 
   const handleClick = () => {
     console.log("Botón clickeado");
@@ -27,11 +20,7 @@ function App() {
 
   const handleKeyUp = () => {
     console.log("Botón soltado");
-  }
-
-  const handleVolume = (e) => {
-    audio.volume = e.target.value; 
-  }
+  };
 
   return (
     <>
@@ -57,259 +46,259 @@ function App() {
           </aside>
            <ul className="piano-keys">
             {/* 1 to 5 - first group of keys - 3 white y 2 black */}
-            <KeyboardKeyWhite
-              keyToPress="c" soundFile="A0.ogg" onClick={handleClick} onKeyUp={handleKeyUp} volume={volume}>
-                C1
-            </KeyboardKeyWhite>
-            <KeyboardKeyBlack 
-              keyToPress="b" soundFile="As0.ogg" onClick={handleClick} onKeyUp={handleKeyUp} volume={volume}>
-                B
-            </KeyboardKeyBlack>
-            <KeyboardKeyWhite
-              keyToPress="a" soundFile="B0.ogg" onClick={handleClick} onKeyUp={handleKeyUp} volume={volume}>
+            <KeyboardKeyWhite index={10}
+              keyCode="a" soundFile="A0.ogg" onClick={handleClick} onKeyUp={handleKeyUp}  setKeyVolume={setVolume} volume={volume}>
                 A
             </KeyboardKeyWhite>
-            <KeyboardKeyBlack 
-              keyToPress="b" soundFile="Cs1.ogg" onClick={handleClick} onKeyUp={handleKeyUp} volume={volume}>
-                B
+            <KeyboardKeyBlack index={10}
+              keyCode="q" soundFile="As0.ogg" onClick={handleClick} onKeyUp={handleKeyUp} volume={volume}>
+                Q
             </KeyboardKeyBlack>
-            <KeyboardKeyWhite
-              keyToPress="a" soundFile="C0.ogg" onClick={handleClick} onKeyUp={handleKeyUp} volume={volume}>
-                A
+            <KeyboardKeyWhite index={10}
+              keyCode="s" soundFile="B0.ogg" onClick={handleClick} onKeyUp={handleKeyUp} volume={volume}>
+                S
+            </KeyboardKeyWhite>
+            <KeyboardKeyBlack index={10}
+              keyCode="w" soundFile="Cs1.ogg" onClick={handleClick} onKeyUp={handleKeyUp} volume={volume}>
+                W
+            </KeyboardKeyBlack>
+            <KeyboardKeyWhite index={10}
+              keyCode="d" soundFile="C0.ogg" onClick={handleClick} onKeyUp={handleKeyUp} volume={volume}>
+                D
             </KeyboardKeyWhite>
             {/* 6 to 12 -second group of keys - 4 white y 3 black */}
-            <KeyboardKeyWhite
-              keyToPress="a" soundFile="D0.ogg" onClick={handleClick} onKeyUp={handleKeyUp} volume={volume}>
-                A
+            <KeyboardKeyWhite index={10}
+              keyCode="f" soundFile="D0.ogg" onClick={handleClick} onKeyUp={handleKeyUp} volume={volume}>
+                F
             </KeyboardKeyWhite>
-            <KeyboardKeyBlack 
-              keyToPress="b" soundFile="Ds1.ogg" onClick={handleClick} onKeyUp={handleKeyUp} volume={volume}>
-                B
+            <KeyboardKeyBlack index={10}
+              keyCode="e" soundFile="Ds1.ogg" onClick={handleClick} onKeyUp={handleKeyUp} volume={volume}>
+                E
             </KeyboardKeyBlack>
-            <KeyboardKeyWhite
-              keyToPress="a" soundFile="E0.ogg" onClick={handleClick} onKeyUp={handleKeyUp} volume={volume}>
-                A
+            <KeyboardKeyWhite index={10}
+              keyCode="g" soundFile="E0.ogg" onClick={handleClick} onKeyUp={handleKeyUp} volume={volume}>
+                G
             </KeyboardKeyWhite>
-            <KeyboardKeyBlack 
-              keyToPress="b" soundFile="As0.ogg" onClick={handleClick} onKeyUp={handleKeyUp} volume={volume}>
-                B
+            <KeyboardKeyBlack index={10}
+              keyCode="r" soundFile="As0.ogg" onClick={handleClick} onKeyUp={handleKeyUp} volume={volume}>
+                R
             </KeyboardKeyBlack>
-            <KeyboardKeyWhite
-              keyToPress="a" soundFile="F0.ogg" onClick={handleClick} onKeyUp={handleKeyUp} volume={volume}>
-                A
+            <KeyboardKeyWhite index={10}
+              keyCode="h" soundFile="F0.ogg" onClick={handleClick} onKeyUp={handleKeyUp} volume={volume}>
+                H
             </KeyboardKeyWhite>
-            <KeyboardKeyBlack 
-              keyToPress="b" soundFile="Cs1.ogg" onClick={handleClick} onKeyUp={handleKeyUp} volume={volume}>
-                B
+            <KeyboardKeyBlack index={10}
+              keyCode="t" soundFile="Cs1.ogg" onClick={handleClick} onKeyUp={handleKeyUp} volume={volume}>
+                T
             </KeyboardKeyBlack>
-            <KeyboardKeyWhite
-              keyToPress="a" soundFile="G0.ogg" onClick={handleClick} onKeyUp={handleKeyUp} volume={volume}>
-                A
+            <KeyboardKeyWhite index={10}
+              keyCode="j" soundFile="G0.ogg" onClick={handleClick} onKeyUp={handleKeyUp} volume={volume}>
+                J
             </KeyboardKeyWhite>
             {/* 13 to 17 - third group of keys - 3 white y 2 black */}
             <KeyboardKeyWhite index={1}
-              keyToPress="a" soundFile="A1.ogg" onClick={handleClick} onKeyUp={handleKeyUp} volume={volume}>
-                A
+              keyCode="k" soundFile="A1.ogg" onClick={handleClick} onKeyUp={handleKeyUp} volume={volume}>
+                K
             </KeyboardKeyWhite>
             <KeyboardKeyBlack index={1}
-              keyToPress="b" soundFile="Ds1.ogg" onClick={handleClick} onKeyUp={handleKeyUp} volume={volume}>
-                B
+              keyCode="y" soundFile="Ds1.ogg" onClick={handleClick} onKeyUp={handleKeyUp} volume={volume}>
+                Y
             </KeyboardKeyBlack>
             <KeyboardKeyWhite index={1}
-              keyToPress="a" soundFile="B1.ogg" onClick={handleClick} onKeyUp={handleKeyUp} volume={volume}>
-                A
+              keyCode="l" soundFile="B1.ogg" onClick={handleClick} onKeyUp={handleKeyUp} volume={volume}>
+                L
             </KeyboardKeyWhite>
             <KeyboardKeyBlack index={1}
-              keyToPress="b" soundFile="As0.ogg" onClick={handleClick} onKeyUp={handleKeyUp} volume={volume}>
-                B
+              keyCode="u" soundFile="As0.ogg" onClick={handleClick} onKeyUp={handleKeyUp} volume={volume}>
+                U
             </KeyboardKeyBlack>
             <KeyboardKeyWhite index={1}
-              keyToPress="a" soundFile="C1.ogg" onClick={handleClick} onKeyUp={handleKeyUp} volume={volume}>
-                A
+              keyCode="ñ" soundFile="C1.ogg" onClick={handleClick} onKeyUp={handleKeyUp} volume={volume}>
+                Ñ
             </KeyboardKeyWhite>
             {/* 18 to 24 - fourth group of keys - 4 blacas y 3 negras */}
             <KeyboardKeyWhite index={2}
-              keyToPress="a" soundFile="D1.ogg" onClick={handleClick} onKeyUp={handleKeyUp} volume={volume}>
-                A
+              keyCode="z" soundFile="D1.ogg" onClick={handleClick} onKeyUp={handleKeyUp} volume={volume}>
+                Z
             </KeyboardKeyWhite>
             <KeyboardKeyBlack index={2}
-              keyToPress="b" soundFile="Cs1.ogg" onClick={handleClick} onKeyUp={handleKeyUp} volume={volume}>
-                B
+              keyCode="y" soundFile="Cs1.ogg" onClick={handleClick} onKeyUp={handleKeyUp} volume={volume}>
+                Y
             </KeyboardKeyBlack>
             <KeyboardKeyWhite index={2}
-              keyToPress="a" soundFile="E1.ogg" onClick={handleClick} onKeyUp={handleKeyUp} volume={volume}>
-                A
+              keyCode="x" soundFile="E1.ogg" onClick={handleClick} onKeyUp={handleKeyUp} volume={volume}>
+                X
             </KeyboardKeyWhite>
             <KeyboardKeyBlack index={2}
-              keyToPress="b" soundFile="Ds1.ogg" onClick={handleClick} onKeyUp={handleKeyUp} volume={volume}>
-                B
+              keyCode="o" soundFile="Ds1.ogg" onClick={handleClick} onKeyUp={handleKeyUp} volume={volume}>
+                O
             </KeyboardKeyBlack>
             <KeyboardKeyWhite index={2}
-              keyToPress="a" soundFile="F1.ogg" onClick={handleClick} onKeyUp={handleKeyUp} volume={volume}>
-                A
+              keyCode="c" soundFile="F1.ogg" onClick={handleClick} onKeyUp={handleKeyUp} volume={volume}>
+                C
             </KeyboardKeyWhite>
             <KeyboardKeyBlack index={2}
-              keyToPress="b" soundFile="Cs1.ogg" onClick={handleClick} onKeyUp={handleKeyUp} volume={volume}>
-                B
+              keyCode="p" soundFile="Cs1.ogg" onClick={handleClick} onKeyUp={handleKeyUp} volume={volume}>
+                P
             </KeyboardKeyBlack>
             <KeyboardKeyWhite index={2}
-              keyToPress="a" soundFile="G1.ogg" onClick={handleClick} onKeyUp={handleKeyUp} volume={volume}>
-                A
+              keyCode="v" soundFile="G1.ogg" onClick={handleClick} onKeyUp={handleKeyUp} volume={volume}>
+                V
             </KeyboardKeyWhite>
             {/* 25 to 29 - fifth group of keys - 3 white y 2 black */}
             <KeyboardKeyWhite index={3}
-              keyToPress="a" soundFile="A2.ogg" onClick={handleClick} onKeyUp={handleKeyUp} volume={volume}>
-                A
+              keyCode="b" soundFile="A2.ogg" onClick={handleClick} onKeyUp={handleKeyUp} volume={volume}>
+                B
             </KeyboardKeyWhite>
             <KeyboardKeyBlack index={3}
-              keyToPress="b" soundFile="Cs1.ogg" onClick={handleClick} onKeyUp={handleKeyUp} volume={volume}>
-                B
+              keyCode="e" soundFile="Cs1.ogg" onClick={handleClick} onKeyUp={handleKeyUp} volume={volume}>
+                E
             </KeyboardKeyBlack>
             <KeyboardKeyWhite index={3}
-              keyToPress="a" soundFile="B2.ogg" onClick={handleClick} onKeyUp={handleKeyUp} volume={volume}>
-                A
+              keyCode="n" soundFile="B2.ogg" onClick={handleClick} onKeyUp={handleKeyUp} volume={volume}>
+                N
             </KeyboardKeyWhite>
             <KeyboardKeyBlack index={3}
-              keyToPress="b" soundFile="Cs1.ogg" onClick={handleClick} onKeyUp={handleKeyUp} volume={volume}>
-                B
+              keyCode="r" soundFile="Cs1.ogg" onClick={handleClick} onKeyUp={handleKeyUp} volume={volume}>
+                R
             </KeyboardKeyBlack>
             <KeyboardKeyWhite index={3}
-              keyToPress="a" soundFile="C2.ogg" onClick={handleClick} onKeyUp={handleKeyUp} volume={volume}>
-                A
+              keyCode="a1" soundFile="C2.ogg" onClick={handleClick} onKeyUp={handleKeyUp} volume={volume}>
+                A1
             </KeyboardKeyWhite>
             {/* 30 to 36 - sixth group of keys - 4 blacas y 3 negras */}
             <KeyboardKeyWhite index={3}
-              keyToPress="a" soundFile="D2.ogg" onClick={handleClick} onKeyUp={handleKeyUp} volume={volume}>
-                A
+              kkeyCode="s1" soundFile="D2.ogg" onClick={handleClick} onKeyUp={handleKeyUp} volume={volume}>
+                S1
             </KeyboardKeyWhite>
             <KeyboardKeyBlack index={3}
-              keyToPress="b" soundFile="Cs1.ogg" onClick={handleClick} onKeyUp={handleKeyUp} volume={volume}>
-                B
+              keyCode="t" soundFile="Cs1.ogg" onClick={handleClick} onKeyUp={handleKeyUp} volume={volume}>
+                T
             </KeyboardKeyBlack>
             <KeyboardKeyWhite index={3}
-              keyToPress="a" soundFile="E2.ogg" onClick={handleClick} onKeyUp={handleKeyUp} volume={volume}>
-                A
+              keyCode="d1" soundFile="E2.ogg" onClick={handleClick} onKeyUp={handleKeyUp} volume={volume}>
+                D1
             </KeyboardKeyWhite>
             <KeyboardKeyBlack index={3}
-              keyToPress="b" soundFile="As0.ogg" onClick={handleClick} onKeyUp={handleKeyUp} volume={volume}>
-                B
+              keyCode="y" soundFile="As0.ogg" onClick={handleClick} onKeyUp={handleKeyUp} volume={volume}>
+                Y
             </KeyboardKeyBlack>
             <KeyboardKeyWhite index={3}
-              keyToPress="a" soundFile="F2.ogg" onClick={handleClick} onKeyUp={handleKeyUp} volume={volume}>
-                A
+              keyCode="f1" soundFile="F2.ogg" onClick={handleClick} onKeyUp={handleKeyUp} volume={volume}>
+                F1
             </KeyboardKeyWhite>
             <KeyboardKeyBlack index={3}
-              keyToPress="b" soundFile="As0.ogg" onClick={handleClick} onKeyUp={handleKeyUp} volume={volume}>
-                B
+              keyCode="u" soundFile="As0.ogg" onClick={handleClick} onKeyUp={handleKeyUp} volume={volume}>
+                U
             </KeyboardKeyBlack>
             <KeyboardKeyWhite index={3}
-              keyToPress="a" soundFile="G2.ogg" onClick={handleClick} onKeyUp={handleKeyUp} volume={volume}>
-                A
+              keyCode="g" soundFile="G2.ogg" onClick={handleClick} onKeyUp={handleKeyUp} volume={volume}>
+                G1
             </KeyboardKeyWhite>
             {/* 37 to 41 - seventh group of keys - 3 white y 2 black */}
             <KeyboardKeyWhite index={4}
-              keyToPress="a" soundFile="A3.ogg" onClick={handleClick} onKeyUp={handleKeyUp} volume={volume}>
-                A
+              keyCode="h1" soundFile="A3.ogg" onClick={handleClick} onKeyUp={handleKeyUp} volume={volume}>
+                H1
             </KeyboardKeyWhite>
             <KeyboardKeyBlack index={4}
-              keyToPress="b" soundFile="As0.ogg" onClick={handleClick} onKeyUp={handleKeyUp} volume={volume}>
-                B
+              keyCode="i" soundFile="As0.ogg" onClick={handleClick} onKeyUp={handleKeyUp} volume={volume}>
+                I
             </KeyboardKeyBlack>
             <KeyboardKeyWhite index={4}
-              keyToPress="a" soundFile="B3.ogg" onClick={handleClick} onKeyUp={handleKeyUp} volume={volume}>
-                A
+              keyCode="j1" soundFile="B3.ogg" onClick={handleClick} onKeyUp={handleKeyUp} volume={volume}>
+                J1
             </KeyboardKeyWhite>
             <KeyboardKeyBlack index={4}
-              keyToPress="b" soundFile="As0.ogg" onClick={handleClick} onKeyUp={handleKeyUp} volume={volume}>
-                B
+              keyCode="p" soundFile="As0.ogg" onClick={handleClick} onKeyUp={handleKeyUp} volume={volume}>
+                P
             </KeyboardKeyBlack>
             <KeyboardKeyWhite index={4}
-              keyToPress="a" soundFile="C3.ogg" onClick={handleClick} onKeyUp={handleKeyUp} volume={volume}>
-                A
+              keyCode="k1" soundFile="C3.ogg" onClick={handleClick} onKeyUp={handleKeyUp} volume={volume}>
+                K1
             </KeyboardKeyWhite>
             {/* 42 to 48 - eighth group of keys - 4 blacas y 3 negras */}
             <KeyboardKeyWhite index={4}
-              keyToPress="a" soundFile="D3.ogg" onClick={handleClick} onKeyUp={handleKeyUp} volume={volume}>
-                A
+              keyCode="l1" soundFile="D3.ogg" onClick={handleClick} onKeyUp={handleKeyUp} volume={volume}>
+                L1
             </KeyboardKeyWhite>
             <KeyboardKeyBlack index={4}
-              keyToPress="b" soundFile="As0.ogg" onClick={handleClick} onKeyUp={handleKeyUp} volume={volume}>
-                B
+              keyCode="e" soundFile="As0.ogg" onClick={handleClick} onKeyUp={handleKeyUp} volume={volume}>
+                E
             </KeyboardKeyBlack>
             <KeyboardKeyWhite index={4}
-              keyToPress="a" soundFile="E3.ogg" onClick={handleClick} onKeyUp={handleKeyUp} volume={volume}>
-                A
+              keyCode="ñ1" soundFile="E3.ogg" onClick={handleClick} onKeyUp={handleKeyUp} volume={volume}>
+                Ñ1
             </KeyboardKeyWhite>
             <KeyboardKeyBlack index={4}
-              keyToPress="b" soundFile="As0.ogg" onClick={handleClick} onKeyUp={handleKeyUp} volume={volume}>
-                B
+              keyCode="r" soundFile="As0.ogg" onClick={handleClick} onKeyUp={handleKeyUp} volume={volume}>
+                R
             </KeyboardKeyBlack>
             <KeyboardKeyWhite index={4}
-              keyToPress="a" soundFile="F3.ogg" onClick={handleClick} onKeyUp={handleKeyUp} volume={volume}>
-                A
+              keyCode="z1" soundFile="F3.ogg" onClick={handleClick} onKeyUp={handleKeyUp} volume={volume}>
+                Z1
             </KeyboardKeyWhite>
             <KeyboardKeyBlack index={4}
-              keyToPress="b" soundFile="As0.ogg" onClick={handleClick} onKeyUp={handleKeyUp} volume={volume}>
-                B
+              keyCode="t" soundFile="As0.ogg" onClick={handleClick} onKeyUp={handleKeyUp} volume={volume}>
+                T
             </KeyboardKeyBlack>
             <KeyboardKeyWhite index={4}
-              keyToPress="a" soundFile="G3.ogg" onClick={handleClick} onKeyUp={handleKeyUp} volume={volume}>
-                A
+              keyCode="x1" soundFile="G3.ogg" onClick={handleClick} onKeyUp={handleKeyUp} volume={volume}>
+                X1
             </KeyboardKeyWhite>
             {/* 49 to 53 - nineth group of keys - 3 white y 2 black */}
             <KeyboardKeyWhite index={5}
-              keyToPress="a" soundFile="A4.ogg" onClick={handleClick} onKeyUp={handleKeyUp} volume={volume}>
-                A
+              keyCode="c1" soundFile="A4.ogg" onClick={handleClick} onKeyUp={handleKeyUp} volume={volume}>
+                C1
             </KeyboardKeyWhite>
             <KeyboardKeyBlack index={5}
-              keyToPress="b" soundFile="As0.ogg" onClick={handleClick} onKeyUp={handleKeyUp} volume={volume}>
+              keyCode="y" soundFile="As0.ogg" onClick={handleClick} onKeyUp={handleKeyUp} volume={volume}>
+                Y
+            </KeyboardKeyBlack>
+            <KeyboardKeyWhite index={5}
+              keyCode="v1" soundFile="B4.ogg" onClick={handleClick} onKeyUp={handleKeyUp} volume={volume}>
+                V1
+            </KeyboardKeyWhite>
+            <KeyboardKeyBlack index={5}
+              keyCode="b" soundFile="As0.ogg" onClick={handleClick} onKeyUp={handleKeyUp} volume={volume}>
                 B
             </KeyboardKeyBlack>
             <KeyboardKeyWhite index={5}
-              keyToPress="a" soundFile="B4.ogg" onClick={handleClick} onKeyUp={handleKeyUp} volume={volume}>
-                A
-            </KeyboardKeyWhite>
-            <KeyboardKeyBlack index={5}
-              keyToPress="b" soundFile="As0.ogg" onClick={handleClick} onKeyUp={handleKeyUp} volume={volume}>
-                B
-            </KeyboardKeyBlack>
-            <KeyboardKeyWhite index={5}
-              keyToPress="a" soundFile="C4.ogg" onClick={handleClick} onKeyUp={handleKeyUp} volume={volume}>
-                A
+              keyCode="b1" soundFile="C4.ogg" onClick={handleClick} onKeyUp={handleKeyUp} volume={volume}>
+                B1
             </KeyboardKeyWhite>
             {/* 54 to 60 - prefinal group of keys - 4 blacas y 3 negras */}
             <KeyboardKeyWhite index={5}
-              keyToPress="a" soundFile="D4.ogg" onClick={handleClick} onKeyUp={handleKeyUp} volume={volume}>
-                A
+              keyCode="n1" soundFile="D4.ogg" onClick={handleClick} onKeyUp={handleKeyUp} volume={volume}>
+                N1
             </KeyboardKeyWhite>
             <KeyboardKeyBlack index={5}
-              keyToPress="b" soundFile="As0.ogg" onClick={handleClick} onKeyUp={handleKeyUp} volume={volume}>
-                B
+              keyCode="rt" soundFile="As0.ogg" onClick={handleClick} onKeyUp={handleKeyUp} volume={volume}>
+                RT
             </KeyboardKeyBlack>
             <KeyboardKeyWhite index={5}
-              keyToPress="a" soundFile="E4.ogg" onClick={handleClick} onKeyUp={handleKeyUp} volume={volume}>
-                A
+              keyCode="m1" soundFile="E4.ogg" onClick={handleClick} onKeyUp={handleKeyUp} volume={volume}>
+                M1
             </KeyboardKeyWhite>
             <KeyboardKeyBlack index={5}
-              keyToPress="b" soundFile="Ds1.ogg" onClick={handleClick} onKeyUp={handleKeyUp} volume={volume}>
-                B
+              keyCode="et" soundFile="Ds1.ogg" onClick={handleClick} onKeyUp={handleKeyUp} volume={volume}>
+                ET
             </KeyboardKeyBlack>
             <KeyboardKeyWhite index={5}
-              keyToPress="a" soundFile="F4.ogg" onClick={handleClick} onKeyUp={handleKeyUp} volume={volume}>
-                A
+              keyCode="a2" soundFile="F4.ogg" onClick={handleClick} onKeyUp={handleKeyUp} volume={volume}>
+                A2
             </KeyboardKeyWhite>
             <KeyboardKeyBlack index={5}
-              keyToPress="b" soundFile="Ds1.ogg" onClick={handleClick} onKeyUp={handleKeyUp} volume={volume}>
-                B
+              keyToPress="ut" soundFile="Ds1.ogg" onClick={handleClick} onKeyUp={handleKeyUp} volume={volume}>
+                UT
             </KeyboardKeyBlack>
             <KeyboardKeyWhite index={5}
-              keyToPress="a" soundFile="G4.ogg" onClick={handleClick} onKeyUp={handleKeyUp} volume={volume}>
-                A
+              keyCode="s2" soundFile="G4.ogg" onClick={handleClick} onKeyUp={handleKeyUp} volume={volume}>
+                S2
             </KeyboardKeyWhite>
             {/* 61 - final group of keys - 1 white do */}
             <KeyboardKeyWhite index={0}
-              keyToPress="a" soundFile="A5.ogg" onClick={handleClick} onKeyUp={handleKeyUp} volume={volume}>
-                A
+              keyCode="m" soundFile="A5.ogg" onClick={handleClick} onKeyUp={handleKeyUp} volume={volume}>
+                M
             </KeyboardKeyWhite>
           </ul>
         </div>

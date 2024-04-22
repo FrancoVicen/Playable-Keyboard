@@ -31,8 +31,8 @@ const BaseButton = () => {
   }, []);
 
   return (
-    <button onClick={toggleAudio}>
-      {isPlaying ? 'Detener Música (Espacio)' : 'Reproducir Música (Espacio)'}
+    <button className='sound-base' onClick={toggleAudio}>
+      {isPlaying ? 'Stop Base' : 'Play Base (Space Bar)'}
     </button>
   );
 };

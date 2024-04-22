@@ -15,7 +15,7 @@ body {
   padding: 35px 40px;
   border-radius: 20px;
   background: #141414;
-  width: 1200px;
+  width: 1300px;
   border: 1px solid #fff;
   box-shadow: #1E1E1E 0px 0px 10px;
 }
@@ -137,6 +137,7 @@ button{
   display: flex;
   list-style: none;
   margin-top: 4vh;
+  justify-content: center;
 }
 .piano-keys .key {
   cursor: pointer;
@@ -232,6 +233,9 @@ html {
         color: yellow;
     }
 }
+/* BASE BUTTON */
+
+
 
 /* FOOTER */
 .footer-container {
@@ -285,5 +289,227 @@ html {
   .piano-keys .key span {
     bottom: 5px;
     font-size: 0.8rem;
+  }
+}
+
+@media screen and (max-width: 1600px) {
+  .wrapper{
+    width: 1200px;
+  }
+  .group-5{
+    display: none;
+  }
+  .volume-input{
+    width: 40%;
+  }
+}
+
+@media screen and (max-width: 1300px) {
+  .wrapper{
+    width: 1000px;
+  }
+  .group-4{
+    display: none;
+  }
+}
+
+@media screen and (max-width: 1150px) {
+  .wrapper{
+    width: 800px;
+  }
+  .group-3{
+    display: none;
+  }
+  .volume-input-valueText{
+    display: none;
+  }
+  .keyboard-setings-turnOnOff-button{
+    display: none;
+  }
+}
+
+@media screen and (max-width: 950px) {
+  .wrapper{
+    width: 600px;
+  }
+  .group-2{
+    display: none;
+  }
+  .sound-base{
+    display: none;
+  }
+  .keyboard-setings-turnOnOff-button{
+    display: none;
+  }
+  .piano-keys .black {
+    z-index: 2;
+    width: 7%;
+    height: 14vh;
+    margin: 0 -17px 0 -17px;
+    border-radius: 0 0 5px 5px;
+    background: linear-gradient(#000, #333);
+    transition: background-color 0.3s ease;
+  }
+  .piano-keys .white {
+    width: 10.5%;
+    height: 25.2vh;
+    border-radius: 0 0 8px 8px;
+    border: 1px solid #000;
+    background: linear-gradient(#fff 96%, #eee 4%);
+  }
+}
+
+@media screen and (max-width: 730px) {
+  .wrapper{
+    width: 400px;
+    padding: 20px 25px;
+    border-radius: 10px;
+  }
+  .group-1{
+    display: none;
+  }
+  .sound-base{
+    display: none;
+  }
+  .volume-input{
+    width: 20%;
+  }
+  .keyboard-setings-turnOnOff-button{
+    display: none;
+  }
+  .piano-keys .black {
+    z-index: 2;
+    width: 9.5%;
+    height: 14vh;
+    margin: 0 -17px 0 -17px;
+    border-radius: 0 0 5px 5px;
+    background: linear-gradient(#000, #333);
+    transition: background-color 0.3s ease;
+  }
+  .piano-keys .white {
+    width: 15.5%;
+    height: 25.2vh;
+    border-radius: 0 0 8px 8px;
+    border: 1px solid #000;
+    background: linear-gradient(#fff 96%, #eee 4%);
+  }
+  h2{
+    display: none;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .wrapper{
+    width: 270px;
+  }
+
+  .sound-base{
+    display: none;
+  }
+  .keyboard-setings-turnOnOff-button{
+    display: none;
+  }
+  h2{
+    display: none;
+  }
+  .piano-keys .black {
+    z-index: 2;
+    width: 13.5%;
+    height: 14vh;
+    margin: 0 -17px 0 -17px;
+    border-radius: 0 0 5px 5px;
+    background: linear-gradient(#000, #333);
+    transition: background-color 0.3s ease;
+  }
+  .piano-keys .white {
+    width: 20.5%;
+    height: 25.2vh;
+    border-radius: 0 0 8px 8px;
+    border: 1px solid #000;
+    background: linear-gradient(#fff 96%, #eee 4%);
+  }
+  h2{
+    display: none;
+  }
+  .group-0{
+    display: none;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .wrapper{
+    width: 270px;
+  }
+
+  .sound-base{
+    display: none;
+  }
+  .keyboard-setings-turnOnOff-button{
+    display: none;
+  }
+  h2{
+    display: none;
+  }
+  .piano-keys .black {
+    z-index: 2;
+    width: 11.5%;
+    height: 14vh;
+    margin: 0 -17px 0 -17px;
+    border-radius: 0 0 5px 5px;
+    background: linear-gradient(#000, #333);
+    transition: background-color 0.3s ease;
+  }
+  .piano-keys .white {
+    width: 16.5%;
+    height: 25.2vh;
+    border-radius: 0 0 8px 8px;
+    border: 1px solid #000;
+    background: linear-gradient(#fff 96%, #eee 4%);
+  }
+  h2{
+    display: none;
+  }
+  .group-0{
+    display: none;
+  }
+}
+
+@media screen and (max-width: 330px) {
+  .wrapper{
+    width: 250px;
+    padding: 20px 15px;
+    border-radius: 10px;
+  }
+
+  .sound-base{
+    display: none;
+  }
+  .keyboard-setings-turnOnOff-button{
+    display: none;
+  }
+  h2{
+    display: none;
+  }
+  .piano-keys .black {
+    z-index: 2;
+    width: 10.5%;
+    height: 14vh;
+    margin: 0 -17px 0 -17px;
+    border-radius: 0 0 5px 5px;
+    background: linear-gradient(#000, #333);
+    transition: background-color 0.3s ease;
+  }
+  .piano-keys .white {
+    width: 15.5%;
+    height: 25.2vh;
+    border-radius: 0 0 8px 8px;
+    border: 1px solid #000;
+    background: linear-gradient(#fff 96%, #eee 4%);
+  }
+  h2{
+    display: none;
+  }
+  .group-0{
+    display: none;
   }
 }

@@ -1,0 +1,289 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+*{
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+font-family: 'Poppins', sans-serif;
+}
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+.wrapper {
+  padding: 35px 40px;
+  border-radius: 20px;
+  background: #141414;
+  width: 1200px;
+  border: 1px solid #fff;
+  box-shadow: #1E1E1E 0px 0px 10px;
+}
+.wrapper .header {
+  display: flex;
+  color: #B2B2B2;
+  align-items: center;
+  justify-content: space-between;
+}
+.header h2 {
+  font-size: 1.6rem;
+}
+.header .column {
+  display: flex;
+  align-items: center;
+}
+.header span {
+  font-weight: 500;
+  margin-right: 20px;
+  margin-left: 20px;
+  font-size: 1.19rem;
+}
+.header input {
+  outline: none;
+  border-radius: 30px;
+}
+.volume-slider input {
+  accent-color: #fff;
+  
+}
+.keys-checkbox input {
+  height: 30px;
+  width: 60px;
+  cursor: pointer;
+  appearance: none;
+  position: relative;
+  background: #4B4B4B
+}
+.keys-checkbox input::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 5px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #8c8c8c;
+  transform: translateY(-50%);
+  transition: all 0.3s ease;
+}
+.keys-checkbox input:checked::before {
+  left: 35px;
+  background: #fff;
+}
+
+/* OVAL BUTTON */
+button{
+  outline: none;
+}
+.keyboard-setings-turnOnOff-button {
+  cursor: pointer;
+  margin-left: 16px;
+  border: 0;
+  border-radius: 999px;
+  padding: 6px 16px;
+  font-weight: bold; 
+  transition: .3s ease background-color;
+  border: 2px solid #302d2d;
+  user-select: none;
+  outline: none;
+  background: linear-gradient(to right, #ff000062, #37ff0025);
+  font-weight: bold;
+  color: #fff;
+}
+
+.keyboard-setings-turnOnOff-button.is-on {
+  
+  border: 2px solid #bbb;
+  background-color: transparent;
+  background: linear-gradient(to right, #ff00000f, #37ff006b);
+  font-weight: bold;
+  color: #fff;
+  width: 90px;
+  user-select: none;
+  outline: none;
+}
+
+.keyboard-setings-turnOnOff-button:hover {
+  opacity: .8;
+}
+
+.keyboard-setings-turnOnOff-button.is-on:hover {
+  background-color: rgba(255, 108, 108, 0.142);
+  border: 1px solid red;
+  color: red;
+  transition: .3s ease all;
+}
+
+.keyboard-setings-turnOnOff-text{
+  display: block;
+  user-select: none;
+  outline: none;
+}
+
+.keyboard-setings-turnOnOff-button.is-on:hover .keyboard-setings-turnOnOff-text{
+  display: none;
+}
+
+.keyboard-setings-turnOnOff-stopOn{
+  display: none;
+}
+
+.keyboard-setings-turnOnOff-button.is-on:hover .keyboard-setings-turnOnOff-stopOn{
+  display: block;
+}
+/* OVAL BUTTON */
+
+.piano-keys {
+  display: flex;
+  list-style: none;
+  margin-top: 4vh;
+}
+.piano-keys .key {
+  cursor: pointer;
+  user-select: none;
+  position: relative;
+  text-transform: uppercase;
+}
+.piano-keys .black {
+  z-index: 2;
+  width: 5%;
+  height: 14vh;
+  margin: 0 -17px 0 -17px;
+  border-radius: 0 0 5px 5px;
+  background: linear-gradient(#000, #333);
+  transition: background-color 0.3s ease;
+}
+.piano-keys .black:active {
+  box-shadow: inset -5px -10px 10px rgba(255, 255, 255, 0.1);
+  background: linear-gradient(#000, #434343);
+}
+.piano-keys .white {
+  width: 7.5%;
+  height: 25.2vh;
+  border-radius: 0 0 8px 8px;
+  border: 1px solid #000;
+  background: linear-gradient(#fff 96%, #eee 4%);
+}
+.piano-keys .white:active {
+  box-shadow: inset -5px 5px 20px rgba(0,0,0,0.2);
+  background:linear-gradient(to bottom, #fff 0%, #eee 100%);
+}
+.piano-keys .key span {
+  position: absolute;
+  bottom: 20px;
+  width: 100%;
+  color: #A2A2A2;
+  font-size: 1.13rem;
+  text-align: center;
+}
+.piano-keys .key.hide span {
+  display: none;
+}
+.piano-keys .black span {
+  bottom: 13px;
+  color: #888888;
+}
+
+.read-the-docs{
+  color: #000
+}  
+
+
+/* TITLE */
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+body,
+html {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  background: #1E1E1E;
+}
+
+.typing {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: auto;
+    user-select: none;
+    color: white;
+    font-family: "Open Sans", sans-serif;
+    font-weight: 300;
+    font-size: 8vw;
+}
+
+#typing::after {
+    content: '|';
+    position: relative;
+    right: 0;
+    animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+    from, to {
+        color: transparent
+    }
+    50% {
+        color: yellow;
+    }
+}
+
+/* FOOTER */
+.footer-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 10vh;
+  background: #1E1E1E;
+  color: #fff;
+  font-size: 1.2rem;
+  font-weight: 500;
+  text-align: center;
+  border-top: 1px solid #fff;
+}
+.footer-text {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  background-color: #33333308;
+  color: #fff;
+  padding: 10px;
+  user-select: none;
+}
+
+/* RESPONSIVE */
+@media only screen and (max-width: 400px) {
+  .piano-keys {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+  }
+
+  .piano-keys .key {
+    width: 20%;
+    margin: 10px 0;
+  }
+
+  .piano-keys .black {
+    width: 8%;
+    height: 10vh;
+    margin: 0;
+    border-radius: 0;
+  }
+
+  .piano-keys .white {
+    width: 20%;
+    height: 20vh;
+    border-radius: 0;
+  }
+
+  .piano-keys .key span {
+    bottom: 5px;
+    font-size: 0.8rem;
+  }
+}

@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState } from 'react';
 import KeyboardKeyWhite from './components/keyboard-key-white'
 import KeyboardKeyBlack from './components/keyboard-key-black'
 import WriterTitle from './components/writer-title'
@@ -7,7 +7,7 @@ import BaseButton from './components/base-button'
 import './App.css'
 
 function App() {
-  const [volume, setVolume] = useState(50)
+ const [volume, setVolume] = useState(50)
 
 
   const handleVolumeChange = (event) => {
@@ -26,11 +26,11 @@ function App() {
     <>
      <div>
      <WriterTitle/>
-     <br />
+     <br /> 
      <br />
       <section className='body'>
         <div className="wrapper">
-          <aside className='header'>
+          <div className='keyboard-header'>
             <h2>Keyboard 1.0</h2>
             <div >
               <span className='volume-text'>Volume</span>
@@ -43,7 +43,7 @@ function App() {
               <BaseButton/>
                 <TurnButton initialIsOn={false}>
                 </TurnButton>
-          </aside>
+          </div>
            <ul className="piano-keys">
             {/* 1 to 5 - first group of keys - 3 white y 2 black */}
             <KeyboardKeyWhite index={10}

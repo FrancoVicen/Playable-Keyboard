@@ -19,26 +19,22 @@ body {
   border: 1px solid #fff;
   box-shadow: #1E1E1E 0px 0px 10px;
 }
-.wrapper .header {
+.wrapper .keyboard-header {
   display: flex;
   color: #B2B2B2;
   align-items: center;
   justify-content: space-between;
 }
-.header h2 {
+.keyboard-header h2 {
   font-size: 1.6rem;
 }
-.header .column {
-  display: flex;
-  align-items: center;
-}
-.header span {
+.keyboard-header span {
   font-weight: 500;
   margin-right: 20px;
   margin-left: 20px;
   font-size: 1.19rem;
 }
-.header input {
+.keyboard-header input {
   outline: none;
   border-radius: 30px;
 }
@@ -209,7 +205,6 @@ html {
         color: yellow;
     }
 }
-/* BASE BUTTON */
 
 
 

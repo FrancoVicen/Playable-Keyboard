@@ -55,7 +55,7 @@ const useMouseSound = (soundFile) => {
     };
 
     if (!audioRef.current) {
-      audioRef.current = new Audio(`../src/sounds/${soundFile}`);
+      audioRef.current = new Audio(`../../src/sounds/${soundFile}`);
       audioRef.current.addEventListener('ended', handleAudioEnded);
     }
 

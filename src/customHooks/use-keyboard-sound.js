@@ -4,7 +4,7 @@ const useKeyboardSound = (key, soundFile) => {
   useEffect(() => {
     const handleKeyDown = (event) => {
       if (event.key === key) {
-        const audio = new Audio(`./src/sounds/${soundFile}`);
+        const audio = new Audio(`../src/sounds/${soundFile}`);
         audio.play();
       }
     };

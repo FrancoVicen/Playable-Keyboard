@@ -197,6 +197,10 @@ html {
     animation: blink 1s step-end infinite;
 }
 
+br{
+  user-select: none;
+}
+
 @keyframes blink {
     from, to {
         color: transparent

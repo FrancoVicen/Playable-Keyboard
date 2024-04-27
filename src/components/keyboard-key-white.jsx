@@ -59,7 +59,7 @@ const KeyboardKeyWhite = ({ keyCode, soundFile, children, index, volume = 1, set
       onMouseUp={handleMouseUp}
     >
       <span>{children}</span>
-      <audio ref={audioRef} src={`src/sounds/${soundFile}`} onEnded={handleAudioEnded} />
+      <audio ref={audioRef} src={`../src/sounds/${soundFile}`} onEnded={handleAudioEnded} />
     </li>
   );
 };

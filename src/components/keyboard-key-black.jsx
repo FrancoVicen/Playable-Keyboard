@@ -53,7 +53,7 @@ const KeyboardKeyBlack = ({ keyCode, soundFile, children, index, volume }) => {
       onMouseUp={handleMouseUp}
       >
       <span>{children}</span>
-      <audio ref={audioRef} src={`../../../src/sounds/${soundFile}`} onEnded={handleAudioEnded} />
+      <audio ref={audioRef} src={`src/sounds/${soundFile}`} onEnded={handleAudioEnded} />
       </li>
       );
     };

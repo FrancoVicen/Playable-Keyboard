@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
-
+import soundbase from '../src/sounds/base.mp3';
 const BaseButton = () => {
-  const [audio] = useState(new Audio('../sounds/base.mp3'));
+  const [audio] = useState(new Audio(soundbase));
   const [isPlaying, setIsPlaying] = useState(false);
 
   const toggleAudio = () => {

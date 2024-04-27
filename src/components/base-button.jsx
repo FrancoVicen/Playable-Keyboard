@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-// import soundbase from 'src/sounds/base.mp3';
+
 const BaseButton = () => {
   const [audio] = useState(new Audio(`../../src/sounds/base.mp3`));
   const [isPlaying, setIsPlaying] = useState(false);
